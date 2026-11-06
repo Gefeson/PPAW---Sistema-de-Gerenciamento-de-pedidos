@@ -51,3 +51,41 @@ RF11 – Permitir que clientes acompanhem seus próprios pedidos.
 RF12 – Permitir que funcionários consultem todos os pedidos.
 
 RF13 – Restringir o cadastro de funcionários a funcionários com perfil de administrador.
+
+## Regras de Negócio
+RN01 - O sistema terá dois perfis principais: Cliente e Funcionário.
+
+RN02 - Clientes poderão realizar seu próprio cadastro.
+
+RN03 - Funcionários serão cadastrados por um funcionário com perfil de administrador.
+
+RN04 - Clientes e funcionários poderão registrar pedidos.
+
+RN05 - Somente funcionários poderão confirmar ou cancelar pedidos.
+
+RN06 - A confirmação de um pedido realizará a baixa automática dos produtos no estoque.
+
+RN07 - O cancelamento de um pedido confirmado devolverá os produtos ao estoque.
+
+RN08 - O sistema não permitirá a confirmação de pedidos sem estoque suficiente.
+
+RN09 - Clientes poderão consultar apenas seus próprios pedidos.
+
+RN10 - Funcionários poderão consultar todos os pedidos.
+
+## Padrões de Projetos
+O projeto utilizará o padrão arquitetural MVC (Model-View-Controller), com disponibilização de funcionalidades por meio de uma API REST.
+
+A organização do backend contemplará:
+
+Controller: recebe e encaminha as requisições.
+
+Service: concentra as regras de negócio.
+
+Repository/DAO: responsável pelo acesso aos dados.
+
+DTO: responsável pela transferência de dados entre as camadas.
+
+Model: representa as entidades e estruturas principais do sistema.
+
+As respostas da aplicação serão disponibilizadas em JSON e poderão ser testadas utilizando o Postman.
