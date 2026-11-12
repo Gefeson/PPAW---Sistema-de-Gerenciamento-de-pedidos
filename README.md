@@ -2,14 +2,14 @@
 
 ## Descrição do Projeto
 
-O Sistema de gerenciamento de pedidos para lojas de informática foi pensado par facilitar o controle de clientes,
+O Sistema de gerenciamento de e-commerce pedidos para lojas de informática foi pensado par facilitar o controle de clientes,
 produtos, estoque e pedidos, permitindo que funcionários e clientes realizem operações de maneira dinâmica e organizada.
 
 O sistema terá dois perfis principais de acesso: Cliente e Funcionário, cada um com permissões específicas. 
 E os funcionários poderão possuir diferentes níveis de autorização.
 
 ## Objetivo
-Desenvolver uma aplicação Web utilizando Java e Spring Boot, com arquitetura MVC e comunicação por meio de uma API REST,
+Desenvolver uma aplicação Web utilizando Java, com arquitetura MVC e comunicação por meio de uma API REST,
 permitindo o gerenciamento de pedidos, clientes, produtos e controle de estoque de lojas de informática.
 
 ## Equipe
