@@ -2,7 +2,7 @@
 
 ## Descrição do Projeto
 
-O Sistema de gerenciamento de e-commerce pedidos para lojas de informática foi pensado par facilitar o controle de clientes,
+O Sistema de gerenciamento de pedidos para lojas de informática e-commerce, foi pensado para facilitar o controle de clientes,
 produtos, estoque e pedidos, permitindo que funcionários e clientes realizem operações de maneira dinâmica e organizada.
 
 O sistema terá dois perfis principais de acesso: Cliente e Funcionário, cada um com permissões específicas. 
@@ -15,7 +15,7 @@ permitindo o gerenciamento de pedidos, clientes, produtos e controle de estoque 
 ## Equipe
 - Fabrício Conceição de Jesus
 - Gefeson da Silva Tavares
-- Leonardo Pereira da Conceiçao
+- Leonardo Pereira da Conceição
 
 ## API Externa
 ViaCEP
