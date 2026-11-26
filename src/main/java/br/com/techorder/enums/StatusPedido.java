@@ -1,6 +1,8 @@
 package br.com.techorder.enums;
 
 public enum StatusPedido {
+  PENDENTE,
+  CONFIRMADO,
   AGUARDANDO_PAGAMENTO,
   PAGO,
   EM_PREPARACAO,

@@ -9,6 +9,9 @@ public class ItemPedido {
   private Integer quantidade;
   private BigDecimal precoUnitario;
 
+  public ItemPedido() {
+  }
+
   public ItemPedido(Long idItemPedido, Pedido pedido, Produto produto, Integer quantidade, BigDecimal precoUnitario) {
     this.idItemPedido = idItemPedido;
     this.pedido = pedido;
@@ -19,6 +22,9 @@ public class ItemPedido {
 
   
   public BigDecimal getSubtotal() {
+    if (precoUnitario == null || quantidade == null) {
+      return BigDecimal.ZERO;
+    }
     return precoUnitario.multiply(BigDecimal.valueOf(quantidade));
   }
   

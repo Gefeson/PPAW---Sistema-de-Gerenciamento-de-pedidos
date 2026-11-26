@@ -13,6 +13,9 @@ public class Pagamento {
   private StatusPagamento status;
   private LocalDateTime dataPagamento;
 
+  public Pagamento() {
+  }
+
   //construtor
   public Pagamento(Long idPagamento, Pedido pedido, FormaPagamento formaPagamento, BigDecimal valor, StatusPagamento status, LocalDateTime dataPagamento) {
     this.idPagamento = idPagamento;

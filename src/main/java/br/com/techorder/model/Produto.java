@@ -1,6 +1,7 @@
 package br.com.techorder.model;
 
 import java.math.BigDecimal;
+import br.com.techorder.exception.RegraNegocioException;
 
 public class Produto {
   private Long idProduto;
@@ -12,6 +13,7 @@ public class Produto {
   private Boolean ativo;
 
   public Produto() {
+    this.ativo = true;
   }
 
   //construtor
@@ -26,22 +28,36 @@ public class Produto {
   }
 
   public BigDecimal calcularValorEstoque() {
+    if (preco == null || quantidadeEstoque == null) {
+      return BigDecimal.ZERO;
+    }
     return preco.multiply(BigDecimal.valueOf(quantidadeEstoque));
   }
 
   public boolean possuiEstoque(int quantidade) {
-    return quantidadeEstoque >= quantidade;
+    return quantidade > 0 && quantidadeEstoque != null && quantidadeEstoque >= quantidade;
   }
 
   public void baixarEstoque(int quantidade) {
+    validarQuantidade(quantidade);
+    if (!possuiEstoque(quantidade)) {
+      throw new RegraNegocioException("Estoque insuficiente para o produto '" + nome + "'");
+    }
     this.quantidadeEstoque -= quantidade;
   }
 
   public void adicionarEstoque(int quantidade) {
-    this.quantidadeEstoque += quantidade;
+    validarQuantidade(quantidade);
+    this.quantidadeEstoque = (quantidadeEstoque == null ? 0 : quantidadeEstoque) + quantidade;
   }
 
-  
+  private void validarQuantidade(int quantidade) {
+    if (quantidade <= 0) {
+      throw new RegraNegocioException("A quantidade deve ser maior que zero");
+    }
+  }
+
+
   // getters e setters
   public Long getIdProduto() {
     return idProduto;

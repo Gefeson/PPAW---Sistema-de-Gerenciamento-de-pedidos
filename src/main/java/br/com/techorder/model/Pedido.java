@@ -5,6 +5,7 @@ import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.List;
 import br.com.techorder.enums.StatusPedido;
+import br.com.techorder.exception.RegraNegocioException;
 
 public class Pedido {
   private Long idPedido;
@@ -19,6 +20,8 @@ public class Pedido {
   public Pedido() {
     this.itens = new ArrayList<>();
     this.dataPedido = LocalDateTime.now();
+    this.status = StatusPedido.PENDENTE;
+    this.valorTotal = BigDecimal.ZERO;
   }
 
   public void adicionarItem(ItemPedido item) {
@@ -35,6 +38,24 @@ public class Pedido {
     this.valorTotal = itens.stream()
     .map(ItemPedido::getSubtotal)
     .reduce(BigDecimal.ZERO, BigDecimal::add);
+  }
+
+  /** Confirma um pedido pendente (a baixa de estoque é feita pelo PedidoService). */
+  public void confirmar(Funcionario funcionario) {
+    if (status != StatusPedido.PENDENTE) {
+      throw new RegraNegocioException("Somente pedidos PENDENTES podem ser confirmados (status atual: " + status + ")");
+    }
+    this.funcionario = funcionario;
+    this.status = StatusPedido.CONFIRMADO;
+  }
+
+  /** Cancela um pedido pendente ou confirmado (a devolução ao estoque é feita pelo PedidoService). */
+  public void cancelar(Funcionario funcionario) {
+    if (status != StatusPedido.PENDENTE && status != StatusPedido.CONFIRMADO) {
+      throw new RegraNegocioException("Pedido com status " + status + " não pode ser cancelado");
+    }
+    this.funcionario = funcionario;
+    this.status = StatusPedido.CANCELADO;
   }
 
   // getters e setters

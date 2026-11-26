@@ -7,47 +7,35 @@ import java.sql.Statement;
 
 public class DatabaseInitializer {
 
+    /** Cria as tabelas (CREATE TABLE IF NOT EXISTS). Lança exceção se algo falhar. */
     public static void inicializar() {
 
-        try {
-            InputStream arquivo = DatabaseInitializer.class
-                    .getClassLoader()
-                    .getResourceAsStream("database/schema.sql");
+        try (InputStream arquivo = DatabaseInitializer.class
+                .getClassLoader()
+                .getResourceAsStream("database/schema.sql")) {
 
             if (arquivo == null) {
-                throw new RuntimeException(
-                        "Arquivo schema.sql não encontrado."
+                throw new IllegalStateException(
+                        "Arquivo database/schema.sql não encontrado no classpath (deve ficar em src/main/resources/database/)."
                 );
             }
 
-            String sql = new String(
-                    arquivo.readAllBytes(),
-                    StandardCharsets.UTF_8
-            );
+            String sql = new String(arquivo.readAllBytes(), StandardCharsets.UTF_8);
 
             try (Connection conexao = ConnectionFactory.conectar();
                  Statement statement = conexao.createStatement()) {
 
-                String[] comandos = sql.split(";");
-
-                for (String comando : comandos) {
+                for (String comando : sql.split(";")) {
                     if (!comando.isBlank()) {
                         statement.execute(comando);
                     }
                 }
             }
 
-            System.out.println(
-                    "Banco de dados inicializado com sucesso!"
-            );
+            System.out.println("Banco de dados inicializado com sucesso!");
 
         } catch (Exception e) {
-            System.out.println(
-                    "Erro ao inicializar o banco de dados:"
-            );
-
-            e.printStackTrace();
+            throw new IllegalStateException("Erro ao inicializar o banco de dados: " + e.getMessage(), e);
         }
     }
 }
-
