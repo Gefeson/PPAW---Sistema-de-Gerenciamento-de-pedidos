@@ -52,6 +52,14 @@ RF12 – Permitir que funcionários consultem todos os pedidos.
 
 RF13 – Restringir o cadastro de funcionários a funcionários com perfil de administrador.
 
+RF14 – Permitir que clientes realizem pagamentos simulados de pedidos confirmados.
+
+RF15 – Disponibilizar as seguintes formas de pagamento: PIX, cartão de crédito, cartão de débito e boleto.
+
+RF16 – Permitir a consulta dos pagamentos registrados.
+
+RF17 – Impedir que um mesmo pedido receba mais de um pagamento.
+
 ## Regras de Negócio
 RN01 - O sistema terá dois perfis principais: Cliente e Funcionário.
 
@@ -72,6 +80,20 @@ RN08 - O sistema não permitirá a confirmação de pedidos sem estoque suficien
 RN09 - Clientes poderão consultar apenas seus próprios pedidos.
 
 RN10 - Funcionários poderão consultar todos os pedidos.
+
+## Pagamentos
+
+O TechOrder possui um módulo de pagamentos simulados, permitindo que clientes realizem o pagamento de pedidos confirmados.
+
+As formas de pagamento disponíveis são:
+
+PIX;
+Cartão de crédito;
+Cartão de débito;
+Boleto.
+
+O sistema registra a forma de pagamento, o valor, o status e a data do pagamento no banco de dados.
+A aprovação ocorre automaticamente, pois se trata de uma simulação, sem comunicação com serviços financeiros externos.
 
 ## Padrões de Projetos
 O projeto utilizará o padrão arquitetural MVC (Model-View-Controller), com disponibilização de funcionalidades por meio de uma API REST.
