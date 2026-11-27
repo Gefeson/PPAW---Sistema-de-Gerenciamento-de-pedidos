@@ -1,0 +1,206 @@
+<mxfile host="app.diagrams.net" agent="TechOrder">
+  <diagram id="Diagrama de Classes" name="Diagrama de Classes">
+    <mxGraphModel dx="2018" dy="1107" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1800" pageHeight="1150" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="titulo" parent="1" style="text;html=1;align=left;verticalAlign=middle;resizable=0;points=[];autosize=0;fontSize=18;fontStyle=1;" value="Diagrama de Classes – TechOrder&lt;div&gt;&lt;br&gt;&lt;/div&gt;" vertex="1">
+          <mxGeometry height="30" width="700" x="60" y="14" as="geometry" />
+        </mxCell>
+        <mxCell id="Pedido" parent="1" style="swimlane;fontStyle=1;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=26;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=0;marginBottom=0;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;swimlaneFillColor=default;" value="Pedido" vertex="1">
+          <mxGeometry height="212" width="288" x="640" y="300" as="geometry" />
+        </mxCell>
+        <mxCell id="Pedido_a" parent="Pedido" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;" value="- idPedido: Long&lt;br&gt;- dataPedido: LocalDateTime&lt;br&gt;- valorTotal: BigDecimal&lt;br&gt;- status: StatusPedido" vertex="1">
+          <mxGeometry height="80" width="288" y="26" as="geometry" />
+        </mxCell>
+        <mxCell id="Pedido_d" parent="Pedido" style="line;strokeWidth=1;fillColor=none;align=left;verticalAlign=middle;spacingTop=-1;spacingLeft=3;spacingRight=3;rotatable=0;labelPosition=right;points=[];portConstraint=eastwest;strokeColor=inherit;" value="" vertex="1">
+          <mxGeometry height="8" width="288" y="106" as="geometry" />
+        </mxCell>
+        <mxCell id="Pedido_m" parent="Pedido" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;" value="+ adicionarItem(item: ItemPedido): void&lt;br&gt;+ removerItem(item: ItemPedido): void&lt;br&gt;+ calcularTotal(): void&lt;br&gt;+ confirmar(funcionario: Funcionario): void&lt;br&gt;+ cancelar(funcionario: Funcionario): void" vertex="1">
+          <mxGeometry height="98" width="288" y="114" as="geometry" />
+        </mxCell>
+        <mxCell id="Cliente" parent="1" style="swimlane;fontStyle=1;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=26;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=0;marginBottom=0;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;swimlaneFillColor=default;" value="Cliente" vertex="1">
+          <mxGeometry height="124" width="200" x="60" y="70" as="geometry" />
+        </mxCell>
+        <mxCell id="Cliente_a" parent="Cliente" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;" value="- idCliente: Long&lt;br&gt;- nome: String&lt;br&gt;- email: String&lt;br&gt;- senhaHash: String&lt;br&gt;- telefone: String" vertex="1">
+          <mxGeometry height="98" width="200" y="26" as="geometry" />
+        </mxCell>
+        <mxCell id="Endereco" parent="1" style="swimlane;fontStyle=1;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=26;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=0;marginBottom=0;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;swimlaneFillColor=default;" value="Endereco" vertex="1">
+          <mxGeometry height="178" width="200" x="60" y="320" as="geometry" />
+        </mxCell>
+        <mxCell id="Endereco_a" parent="Endereco" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;" value="- idEndereco: Long&lt;br&gt;- cep: String&lt;br&gt;- logradouro: String&lt;br&gt;- numero: String&lt;br&gt;- complemento: String&lt;br&gt;- bairro: String&lt;br&gt;- cidade: String&lt;br&gt;- estado: String" vertex="1">
+          <mxGeometry height="152" width="200" y="26" as="geometry" />
+        </mxCell>
+        <mxCell id="Funcionario" parent="1" style="swimlane;fontStyle=1;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=26;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=0;marginBottom=0;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;swimlaneFillColor=default;" value="Funcionario" vertex="1">
+          <mxGeometry height="158" width="208" x="1200" y="70" as="geometry" />
+        </mxCell>
+        <mxCell id="Funcionario_a" parent="Funcionario" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;" value="- idFuncionario: Long&lt;br&gt;- nome: String&lt;br&gt;- email: String&lt;br&gt;- senhaHash: String&lt;br&gt;- perfil: PerfilFuncionario" vertex="1">
+          <mxGeometry height="98" width="208" y="26" as="geometry" />
+        </mxCell>
+        <mxCell id="Funcionario_d" parent="Funcionario" style="line;strokeWidth=1;fillColor=none;align=left;verticalAlign=middle;spacingTop=-1;spacingLeft=3;spacingRight=3;rotatable=0;labelPosition=right;points=[];portConstraint=eastwest;strokeColor=inherit;" value="" vertex="1">
+          <mxGeometry height="8" width="208" y="124" as="geometry" />
+        </mxCell>
+        <mxCell id="Funcionario_m" parent="Funcionario" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;" value="+ ehAdministrador(): boolean" vertex="1">
+          <mxGeometry height="26" width="208" y="132" as="geometry" />
+        </mxCell>
+        <mxCell id="Pagamento" parent="1" style="swimlane;fontStyle=1;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=26;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=0;marginBottom=0;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;swimlaneFillColor=default;" value="Pagamento" vertex="1">
+          <mxGeometry height="158" width="254" x="1200" y="330" as="geometry" />
+        </mxCell>
+        <mxCell id="Pagamento_a" parent="Pagamento" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;" value="- idPagamento: Long&lt;br&gt;- formaPagamento: FormaPagamento&lt;br&gt;- valor: BigDecimal&lt;br&gt;- status: StatusPagamento&lt;br&gt;- dataPagamento: LocalDateTime" vertex="1">
+          <mxGeometry height="98" width="254" y="26" as="geometry" />
+        </mxCell>
+        <mxCell id="Pagamento_d" parent="Pagamento" style="line;strokeWidth=1;fillColor=none;align=left;verticalAlign=middle;spacingTop=-1;spacingLeft=3;spacingRight=3;rotatable=0;labelPosition=right;points=[];portConstraint=eastwest;strokeColor=inherit;" value="" vertex="1">
+          <mxGeometry height="8" width="254" y="124" as="geometry" />
+        </mxCell>
+        <mxCell id="Pagamento_m" parent="Pagamento" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;" value="+ pagamentoAprovado(): boolean" vertex="1">
+          <mxGeometry height="26" width="254" y="132" as="geometry" />
+        </mxCell>
+        <mxCell id="ItemPedido" parent="1" style="swimlane;fontStyle=1;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=26;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=0;marginBottom=0;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;swimlaneFillColor=default;" value="ItemPedido" vertex="1">
+          <mxGeometry height="122" width="200" x="684" y="632" as="geometry" />
+        </mxCell>
+        <mxCell id="ItemPedido_a" parent="ItemPedido" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;" value="- idItemPedido: Long&lt;br&gt;- quantidade: Integer&lt;br&gt;- precoUnitario: BigDecimal" vertex="1">
+          <mxGeometry height="62" width="200" y="26" as="geometry" />
+        </mxCell>
+        <mxCell id="ItemPedido_d" parent="ItemPedido" style="line;strokeWidth=1;fillColor=none;align=left;verticalAlign=middle;spacingTop=-1;spacingLeft=3;spacingRight=3;rotatable=0;labelPosition=right;points=[];portConstraint=eastwest;strokeColor=inherit;" value="" vertex="1">
+          <mxGeometry height="8" width="200" y="88" as="geometry" />
+        </mxCell>
+        <mxCell id="ItemPedido_m" parent="ItemPedido" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;" value="+ getSubtotal(): BigDecimal" vertex="1">
+          <mxGeometry height="26" width="200" y="96" as="geometry" />
+        </mxCell>
+        <mxCell id="Produto" parent="1" style="swimlane;fontStyle=1;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=26;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=0;marginBottom=0;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;swimlaneFillColor=default;" value="Produto" vertex="1">
+          <mxGeometry height="248" width="287" x="1200" y="553" as="geometry" />
+        </mxCell>
+        <mxCell id="Produto_a" parent="Produto" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;" value="- idProduto: Long&lt;br&gt;- nome: String&lt;br&gt;- descricao: String&lt;br&gt;- preco: BigDecimal&lt;br&gt;- quantidadeEstoque: Integer&lt;br&gt;- imagemUrl: String&lt;br&gt;- ativo: Boolean" vertex="1">
+          <mxGeometry height="134" width="287" y="26" as="geometry" />
+        </mxCell>
+        <mxCell id="Produto_d" parent="Produto" style="line;strokeWidth=1;fillColor=none;align=left;verticalAlign=middle;spacingTop=-1;spacingLeft=3;spacingRight=3;rotatable=0;labelPosition=right;points=[];portConstraint=eastwest;strokeColor=inherit;" value="" vertex="1">
+          <mxGeometry height="8" width="287" y="160" as="geometry" />
+        </mxCell>
+        <mxCell id="Produto_m" parent="Produto" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;" value="+ calcularValorEstoque(): BigDecimal&lt;br&gt;+ possuiEstoque(quantidade: int): boolean&lt;br&gt;+ baixarEstoque(quantidade: int): void&lt;br&gt;+ adicionarEstoque(quantidade: int): void" vertex="1">
+          <mxGeometry height="80" width="287" y="168" as="geometry" />
+        </mxCell>
+        <mxCell id="e_cli_end" edge="1" parent="1" source="Cliente" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;endFill=0;startFill=0;startArrow=none;endArrow=none;strokeColor=#333333;exitX=0.45;exitY=1;exitDx=0;exitDy=0;entryX=0.45;entryY=0;entryDx=0;entryDy=0;possui" target="Endereco" value="possui">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e_cli_end_s" connectable="0" parent="e_cli_end" style="edgeLabel;resizable=0;html=1;align=left;verticalAlign=top;" value="1" vertex="1">
+          <mxGeometry relative="1" x="-1" as="geometry">
+            <mxPoint x="6" y="4" as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="e_cli_end_d" connectable="0" parent="e_cli_end" style="edgeLabel;resizable=0;html=1;align=left;verticalAlign=bottom;" value="0..*" vertex="1">
+          <mxGeometry relative="1" x="1" as="geometry">
+            <mxPoint x="6" y="-4" as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="e_cli_ped" edge="1" parent="1" source="Cliente" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;endFill=0;startFill=0;startArrow=none;endArrow=none;strokeColor=#333333;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0.25;entryY=0;entryDx=0;entryDy=0;" target="Pedido" value="realiza">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e_cli_ped_s" connectable="0" parent="e_cli_ped" style="edgeLabel;resizable=0;html=1;align=left;verticalAlign=bottom;" value="1" vertex="1">
+          <mxGeometry relative="1" x="-1" as="geometry">
+            <mxPoint x="6" y="-4" as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="e_cli_ped_d" connectable="0" parent="e_cli_ped" style="edgeLabel;resizable=0;html=1;align=left;verticalAlign=bottom;" value="0..*" vertex="1">
+          <mxGeometry relative="1" x="1" as="geometry">
+            <mxPoint x="6" y="-4" as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="e_end_ped" edge="1" parent="1" source="Endereco" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;endFill=0;startFill=0;startArrow=none;endArrow=none;strokeColor=#333333;exitX=1;exitY=0.2449;exitDx=0;exitDy=0;entryX=0;entryY=0.3;entryDx=0;entryDy=0;" target="Pedido" value="recebe">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e_end_ped_s" connectable="0" parent="e_end_ped" style="edgeLabel;resizable=0;html=1;align=left;verticalAlign=bottom;" value="1" vertex="1">
+          <mxGeometry relative="1" x="-1" as="geometry">
+            <mxPoint x="6" y="-4" as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="e_end_ped_d" connectable="0" parent="e_end_ped" style="edgeLabel;resizable=0;html=1;align=right;verticalAlign=bottom;" value="0..*" vertex="1">
+          <mxGeometry relative="1" x="1" as="geometry">
+            <mxPoint x="-6" y="-4" as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="e_fun_ped" edge="1" parent="1" source="Funcionario" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;endFill=0;startFill=0;startArrow=none;endArrow=none;strokeColor=#333333;exitX=0;exitY=0.5;exitDx=0;exitDy=0;entryX=0.75;entryY=0;entryDx=0;entryDy=0;" target="Pedido" value="confirma ou cancela">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e_fun_ped_s" connectable="0" parent="e_fun_ped" style="edgeLabel;resizable=0;html=1;align=right;verticalAlign=bottom;" value="0..1" vertex="1">
+          <mxGeometry relative="1" x="-1" as="geometry">
+            <mxPoint x="-6" y="-4" as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="e_fun_ped_d" connectable="0" parent="e_fun_ped" style="edgeLabel;resizable=0;html=1;align=left;verticalAlign=bottom;" value="0..*" vertex="1">
+          <mxGeometry relative="1" x="1" as="geometry">
+            <mxPoint x="6" y="-4" as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="e_ped_pag" edge="1" parent="1" source="Pedido" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;endFill=0;startFill=0;startArrow=none;endArrow=none;strokeColor=#333333;exitX=1;exitY=0.6;exitDx=0;exitDy=0;entryX=0;entryY=0.6152;entryDx=0;entryDy=0;" target="Pagamento" value="paga-se com">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e_ped_pag_s" connectable="0" parent="e_ped_pag" style="edgeLabel;resizable=0;html=1;align=left;verticalAlign=bottom;" value="1" vertex="1">
+          <mxGeometry relative="1" x="-1" as="geometry">
+            <mxPoint x="6" y="-4" as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="e_ped_pag_d" connectable="0" parent="e_ped_pag" style="edgeLabel;resizable=0;html=1;align=right;verticalAlign=bottom;" value="0..1" vertex="1">
+          <mxGeometry relative="1" x="1" as="geometry">
+            <mxPoint x="-6" y="-4" as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="e_ped_item" edge="1" parent="1" source="Pedido" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;endFill=0;startFill=1;startArrow=diamondThin;endArrow=none;strokeColor=#333333;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;startSize=14;endSize=14;" target="ItemPedido" value="contém">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e_ped_item_s" connectable="0" parent="e_ped_item" style="edgeLabel;resizable=0;html=1;align=left;verticalAlign=top;" value="1" vertex="1">
+          <mxGeometry relative="1" x="-1" as="geometry">
+            <mxPoint x="6" y="4" as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="e_ped_item_d" connectable="0" parent="e_ped_item" style="edgeLabel;resizable=0;html=1;align=left;verticalAlign=bottom;" value="1..*" vertex="1">
+          <mxGeometry relative="1" x="1" as="geometry">
+            <mxPoint x="6" y="-4" as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="e_prod_item" edge="1" parent="1" source="Produto" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;endFill=0;startFill=0;startArrow=none;endArrow=none;strokeColor=#333333;exitX=0;exitY=0.5645;exitDx=0;exitDy=0;entryX=1;entryY=0.5;entryDx=0;entryDy=0;" target="ItemPedido" value="aparece em">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e_prod_item_s" connectable="0" parent="e_prod_item" style="edgeLabel;resizable=0;html=1;align=right;verticalAlign=bottom;" value="1" vertex="1">
+          <mxGeometry relative="1" x="-1" as="geometry">
+            <mxPoint x="-6" y="-4" as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="e_prod_item_d" connectable="0" parent="e_prod_item" style="edgeLabel;resizable=0;html=1;align=left;verticalAlign=bottom;" value="0..*" vertex="1">
+          <mxGeometry relative="1" x="1" as="geometry">
+            <mxPoint x="6" y="-4" as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="tit_enum" parent="1" style="text;html=1;align=left;verticalAlign=middle;resizable=0;points=[];autosize=0;fontSize=15;fontStyle=1;" value="Enumerações" vertex="1">
+          <mxGeometry height="28" width="300" x="60" y="851" as="geometry" />
+        </mxCell>
+        <mxCell id="StatusPedido" parent="1" style="swimlane;fontStyle=0;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=42;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=0;marginBottom=0;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;swimlaneFillColor=default;" value="«enumeration»&lt;br&gt;&lt;b&gt;StatusPedido&lt;/b&gt;" vertex="1">
+          <mxGeometry height="194" width="210" x="60" y="891" as="geometry" />
+        </mxCell>
+        <mxCell id="StatusPedido_a" parent="StatusPedido" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;" value="PENDENTE&lt;br&gt;CONFIRMADO&lt;br&gt;AGUARDANDO_PAGAMENTO&lt;br&gt;PAGO&lt;br&gt;EM_PREPARACAO&lt;br&gt;ENVIADO&lt;br&gt;ENTREGUE&lt;br&gt;CANCELADO" vertex="1">
+          <mxGeometry height="152" width="210" y="42" as="geometry" />
+        </mxCell>
+        <mxCell id="PerfilFuncionario" parent="1" style="swimlane;fontStyle=0;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=42;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=0;marginBottom=0;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;swimlaneFillColor=default;" value="«enumeration»&lt;br&gt;&lt;b&gt;PerfilFuncionario&lt;/b&gt;" vertex="1">
+          <mxGeometry height="86" width="210" x="310" y="891" as="geometry" />
+        </mxCell>
+        <mxCell id="PerfilFuncionario_a" parent="PerfilFuncionario" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;" value="ADMINISTRADOR&lt;br&gt;ATENDENTE" vertex="1">
+          <mxGeometry height="44" width="210" y="42" as="geometry" />
+        </mxCell>
+        <mxCell id="FormaPagamento" parent="1" style="swimlane;fontStyle=0;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=42;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=0;marginBottom=0;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;swimlaneFillColor=default;" value="«enumeration»&lt;br&gt;&lt;b&gt;FormaPagamento&lt;/b&gt;" vertex="1">
+          <mxGeometry height="122" width="210" x="560" y="891" as="geometry" />
+        </mxCell>
+        <mxCell id="FormaPagamento_a" parent="FormaPagamento" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;" value="PIX&lt;br&gt;CARTAO_CREDITO&lt;br&gt;CARTAO_DEBITO&lt;br&gt;BOLETO" vertex="1">
+          <mxGeometry height="80" width="210" y="42" as="geometry" />
+        </mxCell>
+        <mxCell id="StatusPagamento" parent="1" style="swimlane;fontStyle=0;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=42;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=0;marginBottom=0;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;swimlaneFillColor=default;" value="«enumeration»&lt;br&gt;&lt;b&gt;StatusPagamento&lt;/b&gt;" vertex="1">
+          <mxGeometry height="122" width="210" x="810" y="891" as="geometry" />
+        </mxCell>
+        <mxCell id="StatusPagamento_a" parent="StatusPagamento" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;" value="PENDENTE&lt;br&gt;APROVADO&lt;br&gt;RECUSADO&lt;br&gt;ESTORNADO" vertex="1">
+          <mxGeometry height="80" width="210" y="42" as="geometry" />
+        </mxCell>
+        <mxCell id="nota_status" parent="1" style="shape=note;whiteSpace=wrap;html=1;backgroundOutline=1;darkOpacity=0.05;fillColor=#fff2cc;strokeColor=#d6b656;align=left;spacingLeft=6;size=14;" value="StatusPedido: PENDENTE → CONFIRMADO → AGUARDANDO_PAGAMENTO → PAGO | ou CANCELADO. | StatusPagamento: PENDENTE → APROVADO / RECUSADO." vertex="1">
+          <mxGeometry height="70" width="300" x="1060" y="917" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
