@@ -11,6 +11,9 @@ import br.com.techorder.dao.FuncionarioDAO;
 import br.com.techorder.dao.ItemPedidoDAO;
 import br.com.techorder.dao.PedidoDAO;
 import br.com.techorder.dao.ProdutoDAO;
+import br.com.techorder.controller.PagamentoController;
+import br.com.techorder.dao.PagamentoDAO;
+import br.com.techorder.service.PagamentoService;
 import br.com.techorder.database.DatabaseInitializer;
 import br.com.techorder.http.Resposta;
 import br.com.techorder.http.Router;
@@ -40,6 +43,7 @@ public class Main {
             ProdutoDAO produtoDAO = new ProdutoDAO();
             EnderecoDAO enderecoDAO = new EnderecoDAO();
             PedidoDAO pedidoDAO = new PedidoDAO(new ItemPedidoDAO());
+            PagamentoDAO pagamentoDAO = new PagamentoDAO();
 
             // Services (injeção de dependência manual)
             EmailDisponibilidade emails = new EmailDisponibilidade(clienteDAO, funcionarioDAO);
@@ -49,8 +53,9 @@ public class Main {
             ProdutoService produtoService = new ProdutoService(produtoDAO);
             EnderecoService enderecoService = new EnderecoService(clienteDAO, enderecoDAO, new ViaCepClient());
             PedidoService pedidoService = new PedidoService(pedidoDAO, produtoDAO, clienteDAO, enderecoDAO);
-
+            PagamentoService pagamentoService = new PagamentoService(pagamentoDAO, pedidoDAO);
             funcionarioService.garantirAdministradorInicial();
+            
 
             // Controllers + rotas
             Router router = new Router();
@@ -60,6 +65,7 @@ public class Main {
             new ProdutoController(produtoService, auth).registrar(router);
             new EnderecoController(enderecoService, auth).registrar(router);
             new PedidoController(pedidoService, auth).registrar(router);
+            new PagamentoController(pagamentoService, auth).registrar(router);
 
             int porta = Integer.parseInt(System.getenv().getOrDefault("PORT", "8080"));
             HttpServer servidor = HttpServer.create(new InetSocketAddress(porta), 0);

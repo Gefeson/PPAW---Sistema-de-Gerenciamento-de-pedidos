@@ -1,0 +1,23 @@
+50fe57b | Gefeson | 2026-11-25 | Correção de alguns bugs no DAO, Database e Model, e inicio dos testes
+160f211 | Gefeson | 2026-11-24 | Merge branch 'main' of https://github.com/Gefeson/PPAW---Sistema-de-Gerenciamento-de-pedidos
+ee76070 | Gefeson | 2026-11-24 | Adição da pasta DAO e criação das classes feitas por Leonardo
+361ed4c | Geff_09 | 2026-11-24 | Correção de erros de digitação na descrição do projeto
+0c3867c | Gefeson | 2026-11-13 | Merge branch 'main' of https://github.com/Gefeson/PPAW---Sistema-de-Gerenciamento-de-pedidos
+04c97fe | Gefeson | 2026-11-13 | Atualização nos arquivos do BD e criação dos arquivos das classes
+05c4e49 | Geff_09 | 2026-11-12 | Remoção do uso do Spring boot e definição de um Sistema para gerenciamento de  e-commerce
+e1c5c93 | Gefeson | 2026-11-12 | Concluindo merge pendente
+0d79c59 | Gefeson | 2026-11-12 | Exclusão da estrutura do Spring Boot e criação da estrutura inicial do Banco de Dados
+4cdc52d | Geff_09 | 2026-11-06 | Excluir Usuario.java incompleto
+ffff672 | Gefeson | 2026-11-06 | Merge branch 'main' of https://github.com/Gefeson/PPAW---Sistema-de-Gerenciamento-de-pedidos
+80cb905 | Gefeson | 2026-11-06 | Atualização do sistema de gerenciamento de pedidos
+1356a4c | Geff_09 | 2026-11-06 | Adição das Regras de Negócio e Padrões de Projeto
+8237ffe | Fabricio | 2026-11-06 | Add files via upload
+d5e63b7 | Fabricio | 2026-11-06 | Delete Diagrama de classe.jpeg
+01c22cc | Fabricio | 2026-11-06 | Add files via upload
+8a10de2 | Gefeson | 2026-11-05 | Exclusão da pasta 'bin'
+6dfa5e3 | Gefeson | 2026-11-05 | Envio do diagrama de relacionamento e organização numa pasta
+42e596f | Leonardo Pereira | 2026-11-05 | Imagem
+1c510ad | Leonardo Pereira | 2026-11-05 | Create diagrama de componentes.txt
+13d18ba | Gefeson | 2026-11-05 | Merge branch 'main' of https://github.com/Gefeson/PPAW---Sistema-de-Gerenciamento-de-pedidos
+2e9d3a3 | Gefeson | 2026-11-05 | Primeiro commit
+f028149 | Geff_09 | 2026-11-05 | Revise o README com os detalhes do projeto e os requisitos
