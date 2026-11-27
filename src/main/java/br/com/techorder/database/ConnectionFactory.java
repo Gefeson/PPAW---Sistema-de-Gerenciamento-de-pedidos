@@ -16,7 +16,7 @@ public class ConnectionFactory {
 
     private static final String USER = env("TECHORDER_DB_USER", "postgres");
 
-    private static final String PASSWORD = env("TECHORDER_DB_PASSWORD", "postgres");
+    private static final String PASSWORD = env("TECHORDER_DB_PASSWORD", "Ge123456");
 
     public static Connection conectar() throws SQLException {
       return DriverManager.getConnection(URL, USER, PASSWORD);

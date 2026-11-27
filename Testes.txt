@@ -1,0 +1,181 @@
+Teste 01 — Verificar se o sistema está online
+
+(GET) http://localhost:8080/
+- Autenticação: nenhuma.
+- Body: não precisa.
+Resultado esperado: HTTP 200.
+
+{
+  "aplicacao": "TechOrder",
+  "status": "online"
+}
+
+Teste 02 — Consultar catálogo de produtos
+
+(GET) http://localhost:8080/produtos
+- Autenticação: nenhuma.
+- Body: não precisa.
+Resultado esperado: HTTP 200 e uma lista de produtos ativos ou 
+uma lista vazia se não tiver nenhum produto cadastrado
+
+Teste 03 — Cadastrar cliente
+
+(POST) http://localhost:8080/clientes
+- Autenticação: nenhuma.
+- Body: raw → JSON.
+
+{
+  "nome": "Cliente Demonstracao",
+  "email": "cliente.demo2026@teste.com",
+  "senha": "Cliente123",
+  "telefone": "71999990000"
+}
+
+Resultado esperado: HTTP 201 Created.
+
+A resposta deverá apresentar os dados do cliente cadastrado, incluindo seu ID.
+
+Teste 04 — Tentar listar clientes sem autenticação
+
+(GET) http://localhost:8080/clientes
+- Autenticação: nenhuma.
+- Body: não precisa.
+Resultado esperado: HTTP 401 Unauthorized.
+
+Teste 05 — Consultar CEP
+
+(GET) http://localhost:8080/cep/48110000
+- Autenticação: nenhuma.
+- Body: não precisa.
+Resultado esperado: HTTP 200 e informações do endereço retornadas pelo ViaCEP.
+
+Teste 06 — Cadastrar endereço do cliente
+
+(POST) http://localhost:8080/clientes/ID_CLIENTE/enderecos
+
+Substitua ID_CLIENTE pelo ID retornado no teste 03.
+- Autenticação: Basic Auth.
+- Username: cliente.demo2026@teste.com
+- Password: Cliente123
+- Body: raw → JSON.
+
+{
+  "cep": "48110000",
+  "logradouro": "Rua Barão de Camaçari",
+  "bairro": "Barão de Camaçari",
+  "numero": "110",
+  "complemento": "IF-Baiano"
+}
+
+Resultado esperado: HTTP 201 Created.
+
+Teste 07 — Cadastrar produto
+
+(POST) http://localhost:8080/produtos
+- Autenticação: Basic Auth.
+- Username: admin@techorder.com
+- Password: admin123
+- Body: raw → JSON.
+
+{
+  "nome": "Notebook",
+  "descricao": "Notebook para TechOrder",
+  "preco": 2500.00,
+  "quantidadeEstoque": 20,
+  "imagemUrl": "",
+  "ativo": true
+}
+
+Resultado esperado: HTTP 201 Created.
+
+Teste 09 — Criar pedido
+
+(POST) http://localhost:8080/pedidos
+- Autenticação: Basic Auth.
+- Username: cliente.demo2026@teste.com
+- Password: Cliente123
+- Body: raw → JSON.
+
+{
+  "clienteId": null,
+  "enderecoId": ID_ENDERECO,
+  "itens": [
+    {
+      "produtoId": ID_PRODUTO,
+      "quantidade": 2
+    }
+  ]
+}
+
+Resultado esperado: HTTP 201 Created.
+
+Teste 10 — Tentar pagar pedido ainda pendente
+
+(POST) http://localhost:8080/pedidos/ID_PEDIDO/pagamento
+- Autenticação: Basic Auth (cliente).
+- Body: raw → JSON.
+
+{
+  "formaPagamento": "PIX"
+}
+
+Resultado esperado: HTTP 422 Unprocessable.
+
+Mensagem esperada:
+{
+  "status": 422,
+  "mensagem": "Somente pedidos CONFIRMADOS podem ser pagos"
+}
+
+Teste 11 — Confirmar pedido
+
+(POST) http://localhost:8080/pedidos/ID_PEDIDO/confirmar
+- Autenticação: Basic Auth (administrador).
+- Body: não precisa.
+Resultado esperado: HTTP 200.
+
+O pedido deverá mudar para CONFIRMADO e a baixa no estoque deve acontecer
+
+Teste 12 — Verificar baixa do estoque
+
+(GET) http://localhost:8080/produtos/ID_PRODUTO
+- Autenticação: Basic Auth (administrador).
+- Body: não precisa.
+Resultado esperado: HTTP 200 e redução da quantidade no estoque.
+
+Teste 13 — Realizar pagamento via PIX
+
+(POST) http://localhost:8080/pedidos/ID_PEDIDO/pagamento
+- Autenticação: Basic Auth (cliente).
+- Body: raw → JSON.
+
+{
+  "formaPagamento": "PIX"
+}
+
+Resultado esperado: HTTP 201 Created.
+
+Teste 14 — Consultar pagamento
+
+(GET) http://localhost:8080/pedidos/ID_PEDIDO/pagamento
+- Autenticação: Basic Auth (cliente).
+- Body: não precisa.
+Resultado esperado: HTTP 200.
+
+Teste 15 — Tentar realizar pagamento duplicado
+
+(POST) http://localhost:8080/pedidos/ID_PEDIDO/pagamento
+- Autenticação: Basic Auth (cliente).
+- Body:
+
+{
+  "formaPagamento": "PIX"
+}
+
+Resultado esperado: HTTP 409 Conflict.
+
+Mensagem esperada:
+{
+  "status": 409,
+  "mensagem": "Este pedido já possui um pagamento"
+}
